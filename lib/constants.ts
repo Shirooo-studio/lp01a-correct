@@ -1,0 +1,1 @@
+export const CONSULT_LINK = "https://lin.ee/your-link"; 
