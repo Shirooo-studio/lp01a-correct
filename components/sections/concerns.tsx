@@ -9,7 +9,7 @@ export function Concerns() {
       <div className="max-w-3xl">
         <div className="text-center">
           <img
-            src="/images/Concerns.png"
+            src="./images/Concerns.png"
             alt="お悩み"
             className="w-[450px] -mb-8"
           />

@@ -3,14 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { PencilRuler, Menu, X } from "lucide-react";
 import { CONSULT_LINK } from "@/lib/constants";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +39,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/images/Header_icon.png"
+              src="./images/Header_icon.png"
               alt="赤ペン先生"
               className="w-20 h-10 object-contain drop-shadow-[0_0_20px_white]"
             />
@@ -59,7 +56,7 @@ export function Header() {
                 transition={{ duration: 0.4 }}
               >
                 <img
-                  src="/images/Header_cta.png"
+                  src="./images/Header_cta.png"
                   alt="無料相談"
                   className="w-60 h-16 object-contain"
                 />

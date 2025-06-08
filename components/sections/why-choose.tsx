@@ -28,7 +28,7 @@ export function WhyChoose() {
         <div className="text-center mb-12 relative">
           <img
             ref={ctaBgRef}
-            src="/images/WhyChoose.png"
+            src="./images/WhyChoose.png"
             alt="Why Choose"
             className="w-full h-auto object-contain mb-4"
           />
@@ -52,7 +52,7 @@ export function WhyChoose() {
             }}
           >
             <img
-              src="/images/button_cta.png"
+              src="./images/button_cta.png"
               alt="CTA Button"
               className="w-full h-auto object-contain absolute -translate-x-1/2"
               style={{

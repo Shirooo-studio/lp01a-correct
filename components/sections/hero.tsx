@@ -7,11 +7,11 @@ import { useState } from "react";
 import { CONSULT_LINK } from "@/lib/constants";
 
 export function Hero() {
-  const [mainImage, setMainImage] = useState<string>("/images/Hero_main.png");
-  const [textBubbleImage, setTextBubbleImage] = useState<string>("/images/Hero_textbubble.png");
-  const [ctaImage, setCtaImage] = useState<string>("/images/Hero_cta.png");
-  const [aboutRedpenImage, setAboutRedpenImage] = useState<string>("/images/Hero_aboutredpen.png");
-  const [onlineImage, setOnlineImage] = useState<string>("/images/Hero_online.png");
+  const [mainImage, setMainImage] = useState<string>("./images/Hero_main.png");
+  const [textBubbleImage, setTextBubbleImage] = useState<string>("./images/Hero_textbubble.png");
+  const [ctaImage, setCtaImage] = useState<string>("./images/Hero_cta.png");
+  const [aboutRedpenImage, setAboutRedpenImage] = useState<string>("./images/Hero_aboutredpen.png");
+  const [onlineImage, setOnlineImage] = useState<string>("./images/Hero_online.png");
 
   const handleImageUpload = (
     event: React.ChangeEvent<HTMLInputElement>,

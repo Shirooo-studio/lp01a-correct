@@ -9,7 +9,7 @@ export function CustomerInterview() {
       <div className="max-w-3xl">
         <div className="text-center">
         <img
-          src="/images/CustomerInterview.png"
+          src="./images/CustomerInterview.png"
           alt="Customer Interview"
           className="w-full h-auto object-contain"
         />

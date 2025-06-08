@@ -159,7 +159,7 @@ export function Faq() {
       <div className="container mx-auto max-w-3xl relative">
         <img
           ref={ctaBgRef}
-          src="/images/Faq_cta.png"
+          src="./images/Faq_cta.png"
           alt="FAQ CTA"
           className="w-full h-auto object-contain mt-8"
         />
@@ -184,7 +184,7 @@ export function Faq() {
           }}
         >
           <img
-            src="/images/button_cta.png"
+            src="./images/button_cta.png"
             alt="CTA Button"
             className="w-full h-auto object-contain -translate-x-1/2"
           />
