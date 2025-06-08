@@ -29,7 +29,7 @@ export function FinalCta() {
       <div className="max-w-2xl relative mx-auto">
         <img
           ref={ctaBgRef}
-          src="./images/FinalCta.png"
+          src="./images/finalcta.png"
           alt="Final CTA"
           className="w-full h-auto object-contain"
         />
@@ -54,7 +54,7 @@ export function FinalCta() {
           }}
         >
           <img
-            src="./images/Hero_cta.png"
+            src="./images/hero_cta.png"
             alt="CTA Button"
             className="w-full h-auto object-contain -translate-x-1/2"
           />

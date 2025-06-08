@@ -34,7 +34,7 @@ export function BeforeAfter() {
       <div className="relative w-full max-w-[500px] mx-auto">
         <img
           ref={bgRef}
-          src="./images/BeforeAfter_bg.png"
+          src="./images/beforeafter_bg.png"
           alt="Before After"
           className="w-full h-auto object-contain"
         />
@@ -50,7 +50,7 @@ export function BeforeAfter() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <img
-            src="./images/BeforeAfter_afterplan.png"
+            src="./images/beforeafter_afterplan.png"
             alt="After Plan"
             className="w-full h-auto absolute -translate-x-1/2"
           />
@@ -67,7 +67,7 @@ export function BeforeAfter() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
           <img
-            src="./images/BeforeAfter_afterparse.png"
+            src="./images/beforeafter_afterparse.png"
             alt="After Parse"
             className="w-full h-auto absolute -translate-x-1/2"
           />
@@ -77,7 +77,7 @@ export function BeforeAfter() {
       <div className="container relative w-full max-w-[500px] mx-auto -mt-24">
         <img
           ref={ctaBgRef}
-          src="./images/BeforeAfter_cta.png"
+          src="./images/beforeafter_cta.png"
           alt="Before After CTA"
           className="w-full h-auto object-contain"
         />

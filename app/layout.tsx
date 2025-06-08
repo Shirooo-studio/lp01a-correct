@@ -1,13 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Noto_Sans_JP } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
-
-const notoSansJP = Noto_Sans_JP({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-noto-sans-jp'
-});
 
 export const metadata: Metadata = {
   title: '赤ペン先生 | 住宅の間取り相談サービス',
@@ -23,8 +16,13 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
-        {/* Insert meta tags and GTM here */}
-        {/* <!-- Meta Pixel Code --> */}
+        {/* Google Fontsを<link>で読み込む（Noto Sans JP） */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+
+        {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -50,11 +48,11 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-        {/* <!-- End Meta Pixel Code --> */}
+        {/* End Meta Pixel Code */}
       </head>
       
-      <body className={`${notoSansJP.className} max-w-[430px] mx-auto`}>
-        {/* Insert tags (e.g., GTM noscript) immediately after <body> here */}
+      <body className="font-noto max-w-[430px] mx-auto">
+        {/* GTM noscript */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
@@ -63,6 +61,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

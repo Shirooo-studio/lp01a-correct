@@ -8,7 +8,7 @@ export function PostPurchaseRegret() {
       <div className="relative h-[2540px] md:h-[2900px] bg-[#F8F7F1] overflow-hidden z-0">
         <div className="absolute inset-0">
           <img
-            src="./images/PostPurchaseRegret.png"
+            src="./images/postpurchaseregret.png"
             alt="Post Purchase Regret"
             className="absolute w-[1000px] h-[2500px] md:h-[2880px] left-1/2 -translate-x-[48.5%] object-cover z-30"
           />
@@ -26,7 +26,7 @@ export function PostPurchaseRegret() {
         <div className="pr-8 max-w-2xl">
           <div className="text-center mb-12">
             <img
-              src="./images/Solution.png"
+              src="./images/solution.png"
               alt="Solution"
               className="w-full h-auto object-contain mb-4 z-10 relative"
             />

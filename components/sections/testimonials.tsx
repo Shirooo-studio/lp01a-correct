@@ -16,7 +16,7 @@ export function Testimonials() {
           className="text-center mb-12"
         >
           <img
-            src="./images/Testimonials.png"
+            src="./images/testimonials.png"
             alt="Testimonials"
             className="w-full h-auto object-contain"
           />

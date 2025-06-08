@@ -27,7 +27,7 @@ export function ApplicationFlow() {
       <div className="container mx-auto px-4 max-w-2xl relative">
         <img
           ref={bgRef}
-          src="./images/ApplicationFlow_bg.png"
+          src="./images/applicationflow_bg.png"
           alt="Application Flow Background"
           className="w-full h-auto object-contain mb-4"
         />
@@ -52,7 +52,7 @@ export function ApplicationFlow() {
           }}
         >
           <img
-            src="./images/Hero_cta.png"
+            src="./images/hero_cta.png"
             alt="CTA Button"
             className="w-full h-auto object-contain -translate-x-1/2"
           />

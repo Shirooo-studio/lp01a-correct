@@ -29,16 +29,16 @@ export function Plans() {
       <div className="pl-4 max-w-4xl">
         <div className="text-center mb-12">
           <img
-            src="./images/Plans_bg.png"
+            src="./images/plans_bg.png"
             alt="Plans Background"
             className="w-full h-[320px] object-contain mx-3 -my-6"
           />
 
           {[ // 各プラン画像スライダーをループで表現（可読性向上のため）
-            { src1: "./images/Plans_plancheck.png", src2: "./images/Plans_plancheck_2.png" },
-            { src1: "./images/Plans_1on1.png", src2: "./images/Plans_1on1_2.png" },
-            { src1: "./images/Plans_onlinemeet.png", src2: "./images/Plans_onlinemeet_2.png" },
-            { src1: "./images/Plans_fulldesign.png", src2: "./images/Plans_fulldesign_2.png" }
+            { src1: "./images/plans_plancheck.png", src2: "./images/plans_plancheck_2.png" },
+            { src1: "./images/plans_1on1.png", src2: "./images/plans_1on1_2.png" },
+            { src1: "./images/plans_onlinemeet.png", src2: "./images/plans_onlinemeet_2.png" },
+            { src1: "./images/plans_fulldesign.png", src2: "./images/plans_fulldesign_2.png" }
           ].map((group, index) => (
             <div key={index} className="overflow-x-auto scrollbar-hide h-[390px] my-4">
               <div className="flex gap-4 min-w-max">
@@ -61,7 +61,7 @@ export function Plans() {
       <div className="container mx-auto max-w-4xl mb-4 relative">
         <img
           ref={ctaBgRef}
-          src="./images/Plans_cta.png"
+          src="./images/plans_cta.png"
           alt="Plans CTA"
           className="w-full h-auto object-contain"
         />

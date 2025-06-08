@@ -16,7 +16,7 @@ export function Solution() {
           className="text-center mb-12"
         >
           <img
-            src="./images/Solution.png"
+            src="./images/solution.png"
             alt="Solution"
             className="w-full h-auto object-contain mb-4 z-10"
           />

@@ -159,7 +159,7 @@ export function Faq() {
       <div className="container mx-auto max-w-3xl relative">
         <img
           ref={ctaBgRef}
-          src="./images/Faq_cta.png"
+          src="./images/faq_cta.png"
           alt="FAQ CTA"
           className="w-full h-auto object-contain mt-8"
         />

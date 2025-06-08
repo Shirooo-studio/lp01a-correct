@@ -3,15 +3,18 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CONSULT_LINK } from "@/lib/constants";
 
 export function Hero() {
-  const [mainImage, setMainImage] = useState<string>("./images/Hero_main.png");
-  const [textBubbleImage, setTextBubbleImage] = useState<string>("./images/Hero_textbubble.png");
-  const [ctaImage, setCtaImage] = useState<string>("./images/Hero_cta.png");
-  const [aboutRedpenImage, setAboutRedpenImage] = useState<string>("./images/Hero_aboutredpen.png");
-  const [onlineImage, setOnlineImage] = useState<string>("./images/Hero_online.png");
+  const [mainImage, setMainImage] = useState("./images/hero_main.png");
+  const [textBubbleImage, setTextBubbleImage] = useState("./images/hero_textbubble.png");
+  const [ctaImage, setCtaImage] = useState("./images/hero_cta.png");
+  const [aboutRedpenImage, setAboutRedpenImage] = useState("./images/hero_aboutredpen.png");
+  const [onlineImage, setOnlineImage] = useState("./images/hero_online.png");
+
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => setIsVisible(true), []);
 
   const handleImageUpload = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -26,14 +29,13 @@ export function Hero() {
 
   return (
     <>
-      {/* Heroセクション - グラデーション背景 */}
       <section className="pt-20 pb-8 bg-gradient-to-b from-[#6CC708] to-[#9DFF7F]">
         <div className="container mx-auto px-4">
           <div className="max-w-[375px] mx-auto text-center space-y-4">
             {/* テキストバブル画像 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0 }}
               className="w-full flex -mb-20"
             >
@@ -47,7 +49,7 @@ export function Hero() {
             {/* メイン画像 & CTA画像 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="relative flex justify-center ml-1 -mr-4 mb-20"
             >
@@ -56,15 +58,12 @@ export function Hero() {
                 alt="メイン画像"
                 className="w-full h-full object-contain"
               />
-              {/* CTA画像（重ねる） */}
               <motion.button
                 onClick={() => {
                   window.location.href = CONSULT_LINK;
                 }}
                 className="absolute bottom-[-80px] w-[370px]"
-                style={{
-                  left: "50%",
-                }}
+                style={{ left: "50%" }}
                 animate={{
                   y: [0, -2, 2, -2, 2, -2, 2, -1, 1, 0],
                 }}
@@ -83,13 +82,12 @@ export function Hero() {
               </motion.button>
             </motion.div>
 
-            {/* スペーサー（CTAの重なり分） */}
             <div className="h-[70px]" />
 
             {/* 赤ペン先生について */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-[400px]"
             >
@@ -103,12 +101,12 @@ export function Hero() {
         </div>
       </section>
 
-      {/* オンライン相談セクション - 白背景 */}
+      {/* オンライン相談セクション */}
       <section className="bg-white overflow-x-hidden">
         <div className="mx-auto max-w-[680px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <img
