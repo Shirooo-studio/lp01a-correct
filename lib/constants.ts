@@ -1,1 +1,1 @@
-export const CONSULT_LINK = "https://lin.ee/your-link"; 
+export const CONSULT_LINK = "__LINE_URL__"; //export後に各URLに変更 
