@@ -45,12 +45,12 @@ export function Plans() {
                 <img
                   src={group.src1}
                   alt={`Plan Image ${index * 2 + 1}`}
-                  className="w-full h-[380px] object-contain"
+                  className="w-[288px] h-[380px] object-contain"
                 />
                 <img
                   src={group.src2}
                   alt={`Plan Image ${index * 2 + 2}`}
-                  className="w-full h-[380px] object-contain"
+                  className="w-[288px] h-[380px] object-contain"
                 />
               </div>
             </div>

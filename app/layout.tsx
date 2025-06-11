@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: '赤ペン先生 | 住宅の間取り相談サービス',
-  description: '住宅のプロが無料で間取りをチェック。10,000組以上のサポート実績。営業行為は一切なし。',
+  title: '住宅の赤ペン先生 | 間取りのセカンドオピニオンサービス',
+  description: '住宅のプロがあなたの間取りに赤ペンチェック！',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 };
 
@@ -16,6 +16,9 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
+        {/* favicon の追加 */}
+        <link rel="icon" type="image/png" href="./images/favicon.png"/>
+        
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

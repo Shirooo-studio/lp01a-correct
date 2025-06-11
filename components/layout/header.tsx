@@ -37,7 +37,7 @@ export function Header() {
           : "bg-transparent"
       )}>
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="#" className="flex items-center gap-2">
             <img
               src="./images/header_icon.png"
               alt="赤ペン先生"

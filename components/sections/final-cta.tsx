@@ -1,45 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Monitor } from "lucide-react";
 import { CONSULT_LINK } from "@/lib/constants";
 
 export function FinalCta() {
-  const ctaBgRef = useRef<HTMLImageElement | null>(null);
-  const [ctaBgHeight, setCtaBgHeight] = useState<number>(0);
-
-  useEffect(() => {
-    const updateHeight = () => {
-      if (ctaBgRef.current) {
-        setCtaBgHeight(ctaBgRef.current.clientHeight);
-      }
-    };
-
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
-
-  const ctaButtonTop = ctaBgHeight * 0.09; // お好みに応じて係数調整可能
-
   return (
-    <section className="pt-8">
-      <div className="max-w-2xl relative mx-auto">
-        <img
-          ref={ctaBgRef}
-          src="./images/finalcta.png"
-          alt="Final CTA"
-          className="w-full h-auto object-contain"
-        />
+    <section>
+      <div className="max-w-2xl mx-auto bg-gradient-to-t from-[#6CC708] to-transparent py-8">
+        <div className="px-12 pb-4">
+          <img
+            src="./images/finalcta.png"
+            alt="Final CTA"
+            className="w-full h-auto object-contain"
+          />
+        </div>
 
         <motion.div
-          className="absolute w-[90%] max-w-[390px] h-auto cursor-pointer drop-shadow-lg"
-          style={{
-            bottom: `${ctaButtonTop}px`,
-            left: "50%",
-          }}
+          className="h-auto cursor-pointer drop-shadow-lg mx-4"
           onClick={() => {
             window.location.href = CONSULT_LINK;
           }}
@@ -56,7 +33,7 @@ export function FinalCta() {
           <img
             src="./images/hero_cta.png"
             alt="CTA Button"
-            className="w-full h-auto object-contain -translate-x-1/2"
+            className="w-full h-auto object-contain"
           />
         </motion.div>
       </div>

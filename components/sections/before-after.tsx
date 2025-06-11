@@ -5,16 +5,11 @@ import { useRef, useEffect, useState } from "react";
 import { CONSULT_LINK } from "@/lib/constants";
 
 export function BeforeAfter() {
-  const bgRef = useRef<HTMLImageElement | null>(null);
   const ctaBgRef = useRef<HTMLImageElement | null>(null);
-  const [bgHeight, setBgHeight] = useState<number>(0);
   const [ctaBgHeight, setCtaBgHeight] = useState<number>(0);
 
   useEffect(() => {
     const updateHeights = () => {
-      if (bgRef.current) {
-        setBgHeight(bgRef.current.clientHeight);
-      }
       if (ctaBgRef.current) {
         setCtaBgHeight(ctaBgRef.current.clientHeight);
       }
@@ -25,66 +20,88 @@ export function BeforeAfter() {
     return () => window.removeEventListener("resize", updateHeights);
   }, []);
 
-  const afterPlanTop = bgHeight * 0.383;
-  const afterParseTop = bgHeight * 0.583;
-  const ctaButtonTop = ctaBgHeight * 0.19; // CTA画像に対するボタンの位置（調整可）
+  const ctaButtonTop = ctaBgHeight * 0.26;
 
   return (
-    <section className="py-4 bg-transparent">
-      <div className="relative w-full max-w-[500px] mx-auto">
-        <img
-          ref={bgRef}
-          src="./images/beforeafter_bg.png"
-          alt="Before After"
-          className="w-full h-auto object-contain"
-        />
-
-        <motion.div
-          className="absolute w-[95%] max-w-[410px] object-contain"
-          style={{
-            left: "50%",
-            top: `${afterPlanTop}px`,
-          }}
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
+    <>
+      <section className="bg-gradient-to-t from-[#D9F0FD] to-transparent pb-12 -mt-8 relative">
+        {/* Before 図面 */}
+        <div className="w-[98%] mx-auto">
           <img
-            src="./images/beforeafter_afterplan.png"
-            alt="After Plan"
-            className="w-full h-auto absolute -translate-x-1/2"
+            src="./images/before.png"
+            alt="Before Plan"
+            className="w-full h-auto object-contain"
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="absolute w-[95%] max-w-[410px] object-contain"
-          style={{
-            left: "50%",
-            top: `${afterParseTop}px`,
-          }}
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-        >
+        {/* ▼ 三角アイコン */}
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] w-0 h-0 border-l-[28px] border-r-[28px] border-t-[32px] border-l-transparent border-r-transparent border-t-orange-600 opacity-1" />
+      </section>
+
+      <section className="bg-gradient-to-b from-[rgba(255,139,38,0.3)] to-transparent h-auto py-4 relative">
+        {/* コメント吹き出し */}
+        <div className="w-full max-w-[400px] mx-auto">
           <img
-            src="./images/beforeafter_afterparse.png"
-            alt="After Parse"
-            className="w-full h-auto absolute -translate-x-1/2"
+            src="./images/after_top.png"
+            alt="After星"
+            className="w-full h-auto object-contain"
           />
-        </motion.div>
-      </div>
+        </div>
 
-      <div className="container relative w-full max-w-[500px] mx-auto -mt-24">
+        {/* After プラン */}
+        <div className="w-full max-w-[500px] mx-auto -mt-4">
+          <motion.div
+            className="w-[95%] mx-auto"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 2.5 }}
+          >
+            <img
+              src="./images/beforeafter_afterplan.png"
+              alt="After Plan"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+
+          <motion.div
+            className="w-[95%] mx-auto -mt-4"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+          >
+            <img
+              src="./images/beforeafter_afterparse.png"
+              alt="After Parse"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+        </div>
+
+        {/* コメント吹き出し */}
+        <div className="w-full mx-auto my-4">
+          <img
+            src="./images/after_bottom.png"
+            alt="感想エリア"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </section>
+
+      <section className="bg-white py-6 relative mx-4">
+        {/* コメント吹き出し */}
         <img
           ref={ctaBgRef}
           src="./images/beforeafter_cta.png"
-          alt="Before After CTA"
-          className="w-full h-auto object-contain"
+          alt="beforeafter_cta"
+          className="w-full max-w-[500px] mx-auto object-contain"
         />
+
+        {/* CTAボタン */}
         <motion.div
           className="absolute w-[80%] max-w-[360px] h-auto cursor-pointer drop-shadow-lg"
-          style={{
+          style={{ 
             left: "50%",
+            bottom: `${ctaButtonTop}px`
           }}
           onClick={() => {
             window.location.href = CONSULT_LINK;
@@ -102,13 +119,10 @@ export function BeforeAfter() {
           <img
             src="./images/button_cta.png"
             alt="CTA Button"
-            className="w-full h-auto object-contain absolute -translate-x-1/2"
-            style={{
-              bottom: `${ctaButtonTop}px`,
-            }}
+            className="w-full h-auto object-contain -translate-x-1/2"
           />
         </motion.div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

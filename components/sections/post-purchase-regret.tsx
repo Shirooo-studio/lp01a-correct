@@ -5,21 +5,42 @@ import { motion } from "framer-motion";
 export function PostPurchaseRegret() {
   return (
     <section>
-      <div className="relative h-[2540px] md:h-[2900px] bg-[#F8F7F1] overflow-hidden z-0">
-        <div className="absolute inset-0">
+      <div className="container mx-auto px-4 -mb-4 pt-8 bg-[#F8F7F1] max-w-3xl text-center">
+        <div className="px-4 mb-8">
           <img
-            src="./images/postpurchaseregret.png"
-            alt="Post Purchase Regret"
-            className="absolute w-[1000px] h-[2500px] md:h-[2880px] left-1/2 -translate-x-[48.5%] object-cover z-30"
+            src="./images/post-purchase-regret_regret.png"
+            alt="Post Purchase Regret regret"
+            className="w-full h-auto object-contain"
           />
         </div>
-        {/* 白い下地エリア */}
-        <div className="absolute bottom-0 left-0 w-full h-[144px] bg-white z-0" />      
-
-        {/* ベージュの三角（下に向かって） */}
-        <div className="absolute bottom-20 -left-[10px] w-0 h-0 border-l-[225px] border-r-[0px] border-t-[65px] border-l-transparent border-r-transparent border-t-[#F8F7F1] z-20" />
-        <div className="absolute bottom-20 -right-[10px] w-0 h-0 border-l-[0px] border-r-[225px] border-t-[65px] border-l-transparent border-r-transparent border-t-[#F8F7F1] z-20" />
-      
+        <div className="px-4 -mx-8">
+          <img
+            src="./images/post-purchase-regret_percent.png"
+            alt="Post Purchase Regret percent"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        <div className="px-4 -mt-8 mb-4 -mx-8">
+          <img
+            src="./images/post-purchase-regret_top3.png"
+            alt="Post Purchase Regret top3"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        <div className="-mr-12 text-center">
+          <img
+            src="./images/post-purchase-regret_voices.png"
+            alt="Post Purchase Regret voices"
+            className="w-full h-auto object-contain mb-2"
+          />
+        </div>
+      </div>
+      <div className="-mx-8 bg-white max-w-3xl text-center mb-8">
+        <img
+          src="./images/post-purchase-regret_bottom.png"
+          alt="Post Purchase Regret bottom"
+          className="w-full h-auto object-contain"
+        />
       </div>
 
       <div className="pb-2 bg-transparent -mt-[85px] relative z-10">

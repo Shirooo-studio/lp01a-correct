@@ -6,21 +6,22 @@ import { Card, CardContent } from "@/components/ui/card";
 export function Testimonials() {
 
   return (
-    <section className="pt-8 bg-white">
+    <section className="py-8 bg-white">
       <div className="max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
+        <div className="mx-4 pb-2">
           <img
-            src="./images/testimonials.png"
-            alt="Testimonials"
+            src="./images/testimonials_top.png"
+            alt="Testimonials top"
             className="w-full h-auto object-contain"
           />
-        </motion.div>
+        </div>
+        <div className="mx-0 text-center">
+          <img
+            src="./images/testimonials_body.png"
+            alt="Testimonials body"
+            className="w-full h-auto object-contain"
+          />
+        </div>
       </div>
     </section>
   );
